@@ -1,0 +1,72 @@
+*{
+    margin:0%;
+    padding:0%;
+    box-sizing:border-box;
+}
+html,body{
+    height: 100%;
+    width:100%;
+}
+body{
+    display:flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+/*discrete properties are not animated*/
+/*.box{
+    height:400px;
+    width:600px;
+    border-radius: 50px;
+    animation:changeBG 10s forwards alternate;
+    background-color: rgb(204, 204, 219);
+}
+
+@keyframes changeBG {
+    from{
+        background-color: aliceblue;
+        scale:1;
+    }
+    to{
+        background-color: brown;
+        scale:0.5;
+    }
+}
+*/
+
+.box{
+    height:200px;
+    width:400px;
+    border: 5px solid white;
+    border-radius: 20px;
+    animation:animateBox 10s forwards;
+    background-color: rgb(204, 204, 219);
+    background-color: var(--bgColor);
+}
+.box>p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 2em;
+    text-align: center;
+    text-shadow: 1px 1px 1px grey;
+    padding-top:60px;
+}
+
+@property --bgColor{
+    syntax: "<color>";
+    initial-value: rgb(189,7,143);
+    inherits: false;
+   
+}
+
+@keyframes animateBox {
+    from{
+        --bgColor:red;
+        transform: translateX(30px);
+    }
+    to{
+        --bgColor:blue;
+        transform: translateX(80px);
+    }
+}
